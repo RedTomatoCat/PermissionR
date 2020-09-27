@@ -1,7 +1,7 @@
 Android 权限申请框架
 PermissionR 
 =================  
-  *项目配置环境  
+  项目配置环境  
   *gradle-6.6.1-bin.zip  
   *Kotlin 1.4.0  
   *AndroidX  
