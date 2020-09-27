@@ -20,8 +20,7 @@ Exp
 ------------
 
 ```
-
-`PermissionRBuilder(this)
+PermissionRBuilder(this)
             .permission(
                     Manifest.permission.CAMERA,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -41,6 +40,5 @@ Exp
                 })
                 .must(true)
                 .build()
-`
 
 
