@@ -38,6 +38,7 @@ PermissionRBuilder(this)
                     }
 
                 })
+                .useDialog(true)
                 .must(true)
                 .build()
 
