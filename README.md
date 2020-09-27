@@ -1,14 +1,13 @@
 
 PermissionR
-=================
-*项目配置环境
-*gradle-6.6.1-bin.zip
-*Kotlin 1.4.0
-*AndroidX
-*compileSdkVersion 29
-*buildToolsVersion "29.0.3"
-***********DOC  V1.0.0***********
-
+=================  
+  *项目配置环境  
+  *gradle-6.6.1-bin.zip  
+  *Kotlin 1.4.0  
+  *AndroidX  
+  *compileSdkVersion 29  
+  *buildToolsVersion "29.0.3"  
+  
 UI
 ------------
 *1、PermissionResultDialog
@@ -19,7 +18,10 @@ Core
 
 Exp
 ------------
-PermissionRBuilder(this)
+
+```
+
+`PermissionRBuilder(this)
             .permission(
                     Manifest.permission.CAMERA,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -39,5 +41,6 @@ PermissionRBuilder(this)
                 })
                 .must(true)
                 .build()
+`
 
 
