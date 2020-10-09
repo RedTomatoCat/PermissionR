@@ -12,9 +12,11 @@ UI
 ------------
 *1、PermissionResultDialog
 
-Core
+USE
 ------------
-
+*Maven*
+```
+implementation 'com.redcattomato.permissionr.core:PermissionR:1.0.1'
 
 Exp
 ------------
