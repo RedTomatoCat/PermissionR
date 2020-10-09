@@ -1,27 +1,33 @@
 Android 权限申请框架
+
 PermissionR 
 =================  
+
   项目配置环境  
   *gradle-6.6.1-bin.zip  
   *Kotlin 1.4.0  
   *AndroidX  
   *compileSdkVersion 29  
   *buildToolsVersion "29.0.3"  
-  
+
 UI
 ------------
+
 *1、PermissionResultDialog
 
 USE
 ------------
+
 *Maven*
+
 ```
 implementation 'com.redcattomato.permissionr.core:PermissionR:1.0.1'
+```
 
 Exp
 ------------
 
-```
+```PermissionRBuilder(this)
 PermissionRBuilder(this)
             .permission(
                     Manifest.permission.CAMERA,
@@ -43,5 +49,6 @@ PermissionRBuilder(this)
                 .useDialog(true)
                 .must(true)
                 .build()
+```
 
-
+​              
