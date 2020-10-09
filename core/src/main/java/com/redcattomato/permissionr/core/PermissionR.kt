@@ -17,7 +17,7 @@ import com.redcattomato.permissionr.core.ui.PermissionResultDialog
  **/
 class PermissionR(builder: PermissionRBuilder) {
 
-    val mBuilder = builder
+    internal val mBuilder = builder
     private var mPermissionResultDialog: PermissionResultDialog?=null
 
     init {

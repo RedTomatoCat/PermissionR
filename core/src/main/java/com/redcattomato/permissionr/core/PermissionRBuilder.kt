@@ -13,15 +13,15 @@ import com.redcattomato.permissionr.core.imp.PermissionRListener
  **/
 class PermissionRBuilder(@NonNull context: AppCompatActivity) {
 
-    var permissionList = mutableListOf<String>()    //所有请求权限
-    val grantedList = mutableListOf<String>()       //已授权权限
-    var deniedList = mutableListOf<String>()        //未授权权限
-    var listener: PermissionRListener? = null
-    var must = false                                //true 必须同意权限
-    var useDialog = true                            //是否显示权限列表提示弹窗
+    internal var permissionList = mutableListOf<String>()    //所有请求权限
+    internal val grantedList = mutableListOf<String>()       //已授权权限
+    internal var deniedList = mutableListOf<String>()        //未授权权限
+    internal var listener: PermissionRListener? = null
+    internal var must = false                                //true 必须同意权限
+    internal var useDialog = true                            //是否显示权限列表提示弹窗
 
-    val mcontext = context
-    var permissionInfoList = mutableListOf<PermissionRInfo>()          //权限信息列表
+    internal val mcontext = context
+    internal var permissionInfoList = mutableListOf<PermissionRInfo>()          //权限信息列表
 
     /**
      * 添加申请权限
