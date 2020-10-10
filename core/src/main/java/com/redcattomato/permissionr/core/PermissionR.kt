@@ -55,24 +55,32 @@ class PermissionR(builder: PermissionRBuilder) {
         builder.permissionList.removeAll(removeList)
         builder.permissionInfoList = permissionInfoList
         if (builder.listener != null)
-            if (permissionGroupList.isEmpty()) {
-                //unknow ERR
-                builder.listener!!.onFailed(mutableListOf())
+            if (builder.permissionList.size == 0) {//all success
+                builder.listener!!.allSuccess()
             } else {
-                val life =
-                    mBuilder.mcontext.supportFragmentManager.findFragmentByTag("observer_life")
-                if (life != null) mBuilder.mcontext.supportFragmentManager.beginTransaction()
-                    .remove(life)
-                mBuilder.mcontext.supportFragmentManager.beginTransaction()
-                    .add(RFragment(this), "observer_life").commitNowAllowingStateLoss()
-                Log.e(TAG, "onReady")
-                builder.listener!!.onReady(mBuilder.permissionInfoList)
-                if (mBuilder.useDialog) {
-                    show(mBuilder.mcontext.supportFragmentManager, mBuilder.permissionInfoList, mBuilder.must)
+                if (permissionGroupList.isEmpty()) {
+                    if (removeList.size > 0) {
+                        builder.listener!!.allSuccess()
+                    } else {
+                        builder.listener!!.onFailed(mutableListOf())
+                    }
                 } else {
-                    request()
+                    val life =
+                        mBuilder.mcontext.supportFragmentManager.findFragmentByTag("observer_life")
+                    if (life != null) mBuilder.mcontext.supportFragmentManager.beginTransaction()
+                        .remove(life)
+                    mBuilder.mcontext.supportFragmentManager.beginTransaction()
+                        .add(RFragment(this), "observer_life").commitNowAllowingStateLoss()
+                    Log.e(TAG, "onReady")
+                    builder.listener!!.onReady(mBuilder.permissionInfoList)
+                    if (mBuilder.useDialog) {
+                        show(mBuilder.mcontext.supportFragmentManager, mBuilder.permissionInfoList, mBuilder.must)
+                    } else {
+                        request()
+                    }
                 }
             }
+
     }
 
     fun show(manager: FragmentManager, permissionInfoList: List<PermissionRInfo>, must: Boolean) {
