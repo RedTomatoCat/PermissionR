@@ -1,4 +1,4 @@
-Android 权限申请框架
+### Android 权限申请框架
 
 PermissionR 
 =================  
@@ -23,6 +23,11 @@ USE
 ```
 implementation 'com.redcattomato.permissionr.core:PermissionR:1.0.2'
 ```
+
+使用场景
+------------
+
+Activity, Fragment, Dialog
 
 Exp
 ------------
