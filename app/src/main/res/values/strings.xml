@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PermissionR</string>
+
+    <string name="permission_action">权限场景</string>
+
+    <string-array name="permissionr_action_list">
+        <item>Actvity</item>
+        <item>DialogFragment</item>
+        <item>Dialog</item>
+    </string-array>
+
 </resources>

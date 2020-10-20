@@ -1,8 +1,12 @@
 package com.redcattomato.permissionr.core
 
+import android.app.Dialog
+import android.content.Context
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.redcattomato.permissionr.core.imp.PermissionRListener
 
 /**
@@ -11,7 +15,7 @@ import com.redcattomato.permissionr.core.imp.PermissionRListener
  * @author redcattomato
  * @version 1.0.0
  **/
-class PermissionRBuilder(@NonNull context: AppCompatActivity) {
+class PermissionRBuilder {
 
     internal var permissionList = mutableListOf<String>()    //所有请求权限
     internal val grantedList = mutableListOf<String>()       //已授权权限
@@ -20,8 +24,31 @@ class PermissionRBuilder(@NonNull context: AppCompatActivity) {
     internal var must = false                                //true 必须同意权限
     internal var useDialog = true                            //是否显示权限列表提示弹窗
 
-    internal val mcontext = context
+    internal var mcontext: Context ?= null
+    internal var mfragment: Fragment ?= null
+    internal var isFragmentContext = false
     internal var permissionInfoList = mutableListOf<PermissionRInfo>()          //权限信息列表
+
+    constructor(@NonNull context: AppCompatActivity){
+        mcontext = context
+    }
+
+    constructor(@NonNull fragment: DialogFragment){
+        mcontext = fragment.context
+        mfragment = fragment
+        isFragmentContext = true
+    }
+
+    constructor(@NonNull fragment: Fragment){
+        mcontext = fragment.context
+        mfragment = fragment
+        isFragmentContext = true
+    }
+
+    constructor(@NonNull dialog: Dialog){
+        mcontext = dialog.context
+        isFragmentContext = true
+    }
 
     /**
      * 添加申请权限
