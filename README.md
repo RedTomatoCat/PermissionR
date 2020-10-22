@@ -21,7 +21,7 @@ USE
 *Maven*
 
 ```
-implementation 'com.redcattomato.permissionr.core:PermissionR:1.0.2'
+implementation 'com.redcattomato.permissionr.core:PermissionR:1.0.3'
 ```
 
 使用场景
